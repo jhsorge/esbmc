@@ -33,6 +33,8 @@ jobs:
       run: cd build && ninja builtin_libs_test && ninja builtin_libs_fuzz
     - name: Build clang-c-frontend tests
       run: cd build && ninja typecast_fuzz && ninja typecfrontend
+    - name: Build Cache Unit Tests
+      run: cd build && ninja expr_variable_reordering_test && ninja lru_cache_test && ninja crc_set_container_test && ninja expr_variable_reordering_fuzz && ninja expr_green_normal_form_test && ninja cache_fuzz_utils_test
     - name: Run tests
       run: cd build && ninja test
 
